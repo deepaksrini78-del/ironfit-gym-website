@@ -1,0 +1,296 @@
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background: #111;
+    color: #fff;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: #0b0b0b;
+    border-bottom: 1px solid #222;
+}
+
+.navbar {
+    max-width: 1200px;
+    margin: auto;
+    padding: 18px 25px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: #ff3b30;
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #ff3b30;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 90vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    padding: 40px 20px;
+
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+        url("https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1600&q=80");
+
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.hero-content > p:first-child {
+    color: #ff3b30;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-size: clamp(40px, 7vw, 72px);
+    line-height: 1.05;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 18px;
+    color: #ddd;
+    margin-bottom: 30px;
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+.btn {
+    display: inline-block;
+    padding: 14px 28px;
+
+    background: #ff3b30;
+    color: #fff;
+
+    text-decoration: none;
+    border-radius: 8px;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    opacity: 0.9;
+}
+
+/* =========================
+   SECTIONS
+========================= */
+
+.section {
+    max-width: 1200px;
+    margin: auto;
+    padding: 90px 25px;
+    text-align: center;
+}
+
+.section h2 {
+    font-size: 38px;
+    margin-bottom: 20px;
+}
+
+.section > p {
+    max-width: 750px;
+    margin: 0 auto;
+    color: #ccc;
+}
+
+/* =========================
+   CARDS
+========================= */
+
+.cards {
+    margin-top: 40px;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.card {
+    background: #1b1b1b;
+    padding: 30px;
+    border-radius: 12px;
+
+    border: 1px solid #292929;
+
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    border-color: #ff3b30;
+}
+
+.card h3 {
+    font-size: 23px;
+    margin-bottom: 12px;
+}
+
+.card h4 {
+    color: #ff3b30;
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+.card p {
+    color: #bbb;
+    margin-bottom: 8px;
+}
+
+/* =========================
+   CONTACT
+========================= */
+
+#contact p {
+    margin: 10px 0;
+}
+
+/* =========================
+   WHATSAPP BUTTON
+========================= */
+
+.whatsapp-btn {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+
+    padding: 14px 20px;
+
+    background: #25d366;
+    color: white;
+
+    text-decoration: none;
+    border-radius: 50px;
+
+    font-weight: bold;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+
+    z-index: 1000;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    text-align: center;
+    padding: 25px;
+    background: #090909;
+    color: #888;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav-links {
+        gap: 12px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero {
+        min-height: 80vh;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .section {
+        padding: 70px 20px;
+    }
+
+    .section h2 {
+        font-size: 32px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .nav-links {
+        font-size: 14px;
+        gap: 10px;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .btn {
+        padding: 12px 22px;
+    }
+}
