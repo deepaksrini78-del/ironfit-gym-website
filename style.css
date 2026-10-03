@@ -19,6 +19,7 @@ body {
     color: #fff;
 }
 
+
 /* =========================
    NAVBAR
 ========================= */
@@ -27,13 +28,17 @@ header {
     position: sticky;
     top: 0;
     z-index: 1000;
-    background: #0b0b0b;
-    border-bottom: 1px solid #222;
+
+    background: rgba(11, 11, 11, 0.97);
+    border-bottom: 1px solid #252525;
 }
 
 .navbar {
+    position: relative;
+
     max-width: 1200px;
     margin: auto;
+
     padding: 18px 25px;
 
     display: flex;
@@ -42,27 +47,58 @@ header {
 }
 
 .logo {
-    font-size: 28px;
-    font-weight: bold;
     color: #ff3b30;
+    text-decoration: none;
+
+    font-size: 28px;
+    font-weight: 800;
+
+    letter-spacing: 1px;
 }
 
 .nav-links {
     display: flex;
+    align-items: center;
+
     gap: 25px;
+
     list-style: none;
 }
 
 .nav-links a {
     color: #fff;
     text-decoration: none;
+
     font-weight: 600;
-    transition: 0.3s;
+
+    transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
     color: #ff3b30;
 }
+
+
+/* =========================
+   HAMBURGER BUTTON
+========================= */
+
+.menu-toggle {
+    display: none;
+
+    background: transparent;
+    border: none;
+
+    color: #fff;
+
+    font-size: 31px;
+    line-height: 1;
+
+    cursor: pointer;
+
+    padding: 4px 8px;
+}
+
 
 /* =========================
    HERO
@@ -74,12 +110,16 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
+
     text-align: center;
 
-    padding: 40px 20px;
+    padding: 60px 20px;
 
     background:
-        linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+        linear-gradient(
+            rgba(0, 0, 0, 0.67),
+            rgba(0, 0, 0, 0.75)
+        ),
         url("https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1600&q=80");
 
     background-size: cover;
@@ -87,27 +127,37 @@ header {
 }
 
 .hero-content {
-    max-width: 800px;
+    max-width: 850px;
 }
 
-.hero-content > p:first-child {
+.hero-label {
     color: #ff3b30;
-    font-weight: bold;
+
+    font-weight: 800;
+
     letter-spacing: 2px;
-    margin-bottom: 15px;
+
+    margin-bottom: 16px;
 }
 
 .hero h1 {
-    font-size: clamp(40px, 7vw, 72px);
+    font-size: clamp(42px, 7vw, 74px);
+
     line-height: 1.05;
+
     margin-bottom: 20px;
 }
 
-.hero p {
+.hero-description {
+    max-width: 700px;
+
+    margin: 0 auto 30px;
+
     font-size: 18px;
+
     color: #ddd;
-    margin-bottom: 30px;
 }
+
 
 /* =========================
    BUTTON
@@ -115,17 +165,22 @@ header {
 
 .btn {
     display: inline-block;
+
     padding: 14px 28px;
 
     background: #ff3b30;
     color: #fff;
 
     text-decoration: none;
+
     border-radius: 8px;
 
-    font-weight: bold;
+    font-weight: 700;
 
-    transition: 0.3s;
+    transition:
+        transform 0.3s ease,
+        opacity 0.3s ease,
+        background 0.3s ease;
 }
 
 .btn:hover {
@@ -133,78 +188,219 @@ header {
     opacity: 0.9;
 }
 
+
 /* =========================
    SECTIONS
 ========================= */
 
 .section {
     max-width: 1200px;
+
     margin: auto;
+
     padding: 90px 25px;
+
     text-align: center;
 }
 
 .section h2 {
-    font-size: 38px;
-    margin-bottom: 20px;
+    font-size: 40px;
+
+    margin-bottom: 22px;
 }
 
-.section > p {
-    max-width: 750px;
+.section-description {
+    max-width: 760px;
+
     margin: 0 auto;
-    color: #ccc;
+
+    color: #c7c7c7;
+
+    font-size: 17px;
 }
+
 
 /* =========================
    CARDS
 ========================= */
 
 .cards {
-    margin-top: 40px;
+    margin-top: 42px;
 
     display: grid;
+
     grid-template-columns: repeat(3, 1fr);
+
     gap: 25px;
 }
 
 .card {
-    background: #1b1b1b;
+    position: relative;
+
+    background: #1a1a1a;
+
     padding: 30px;
-    border-radius: 12px;
 
-    border: 1px solid #292929;
+    border-radius: 14px;
 
-    transition: 0.3s;
+    border: 1px solid #2a2a2a;
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
 .card:hover {
     transform: translateY(-8px);
+
     border-color: #ff3b30;
+
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+}
+
+.card-icon {
+    font-size: 45px;
+
+    margin-bottom: 14px;
 }
 
 .card h3 {
     font-size: 23px;
-    margin-bottom: 12px;
-}
 
-.card h4 {
-    color: #ff3b30;
-    font-size: 22px;
-    margin-bottom: 15px;
+    margin-bottom: 12px;
 }
 
 .card p {
     color: #bbb;
-    margin-bottom: 8px;
 }
+
+
+/* =========================
+   PRICING
+========================= */
+
+.pricing-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.price {
+    color: #ff3b30 !important;
+
+    font-size: 30px !important;
+
+    font-weight: 800;
+
+    margin-bottom: 20px;
+}
+
+.price span {
+    color: #aaa;
+
+    font-size: 15px;
+
+    font-weight: normal;
+}
+
+.features {
+    width: 100%;
+
+    list-style: none;
+
+    margin-bottom: 25px;
+}
+
+.features li {
+    color: #ccc;
+
+    margin: 10px 0;
+}
+
+.pricing-card .btn {
+    margin-top: auto;
+}
+
+.featured {
+    border-color: #ff3b30;
+    transform: translateY(-8px);
+}
+
+.featured:hover {
+    transform: translateY(-13px);
+}
+
+.popular-badge {
+    position: absolute;
+
+    top: -13px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    padding: 5px 13px;
+
+    background: #ff3b30;
+
+    border-radius: 20px;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    white-space: nowrap;
+}
+
+
+/* =========================
+   TRAINERS
+========================= */
+
+.trainer-card {
+    text-align: center;
+}
+
+.trainer-avatar {
+    width: 90px;
+    height: 90px;
+
+    margin: 0 auto 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+
+    background: #ff3b30;
+
+    font-size: 24px;
+    font-weight: 800;
+}
+
+.trainer-card p {
+    color: #ff3b30;
+}
+
 
 /* =========================
    CONTACT
 ========================= */
 
-#contact p {
-    margin: 10px 0;
+.contact-section {
+    text-align: center;
 }
+
+.contact-details {
+    margin: 25px 0;
+}
+
+.contact-details p {
+    margin: 10px 0;
+
+    color: #ccc;
+}
+
 
 /* =========================
    WHATSAPP BUTTON
@@ -212,85 +408,204 @@ header {
 
 .whatsapp-btn {
     position: fixed;
+
     right: 20px;
     bottom: 20px;
+
+    z-index: 999;
 
     padding: 14px 20px;
 
     background: #25d366;
-    color: white;
+    color: #fff;
 
     text-decoration: none;
+
     border-radius: 50px;
 
-    font-weight: bold;
+    font-weight: 800;
 
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 7px 22px rgba(0, 0, 0, 0.3);
 
-    z-index: 1000;
+    transition:
+        transform 0.3s ease,
+        opacity 0.3s ease;
 }
+
+.whatsapp-btn:hover {
+    transform: translateY(-3px);
+    opacity: 0.9;
+}
+
 
 /* =========================
    FOOTER
 ========================= */
 
 footer {
-    text-align: center;
     padding: 25px;
+
+    text-align: center;
+
     background: #090909;
+
     color: #888;
 }
 
+
 /* =========================
-   RESPONSIVE
+   MOBILE NAVBAR
 ========================= */
 
 @media (max-width: 768px) {
 
     .navbar {
-        flex-direction: column;
-        gap: 15px;
+        flex-direction: row;
+    }
+
+    .menu-toggle {
+        display: block;
     }
 
     .nav-links {
-        gap: 12px;
-        flex-wrap: wrap;
-        justify-content: center;
+        display: none;
+
+        position: absolute;
+
+        top: 100%;
+        left: 0;
+
+        width: 100%;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 0;
+
+        background: #0b0b0b;
+
+        border-top: 1px solid #252525;
+
+        padding: 10px 0;
+
+        box-shadow: 0 12px 20px rgba(0, 0, 0, 0.25);
     }
 
-    .hero {
-        min-height: 80vh;
+    .nav-links.active {
+        display: flex;
     }
+
+    .nav-links li {
+        width: 100%;
+
+        text-align: center;
+    }
+
+    .nav-links a {
+        display: block;
+
+        padding: 14px 20px;
+    }
+
+    .nav-links a:hover {
+        background: #181818;
+    }
+
+
+    /* Cards */
 
     .cards {
         grid-template-columns: 1fr;
     }
+
+
+    /* Sections */
 
     .section {
         padding: 70px 20px;
     }
 
     .section h2 {
-        font-size: 32px;
+        font-size: 34px;
     }
-}
 
-@media (max-width: 480px) {
 
-    .nav-links {
-        font-size: 14px;
-        gap: 10px;
+    /* Hero */
+
+    .hero {
+        min-height: 82vh;
     }
 
     .hero h1 {
-        font-size: 40px;
+        font-size: 45px;
     }
 
-    .hero p {
+    .hero-description {
         font-size: 16px;
     }
 
-    .btn {
-        padding: 12px 22px;
+
+    /* Pricing */
+
+    .featured {
+        transform: none;
+    }
+
+    .featured:hover {
+        transform: translateY(-8px);
+    }
+}
+
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 480px) {
+
+    .navbar {
+        padding: 16px 18px;
+    }
+
+    .logo {
+        font-size: 24px;
+    }
+
+    .menu-toggle {
+        font-size: 29px;
+    }
+
+    .hero {
+        padding: 45px 18px;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    .hero-label {
+        font-size: 13px;
+    }
+
+    .section {
+        padding: 60px 18px;
+    }
+
+    .section h2 {
+        font-size: 30px;
+    }
+
+    .card {
+        padding: 25px 20px;
+    }
+
+    .whatsapp-btn {
+        right: 15px;
+        bottom: 15px;
+
+        padding: 12px 17px;
+
+        font-size: 14px;
     }
 }

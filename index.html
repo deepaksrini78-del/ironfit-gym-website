@@ -4,16 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>IronFit Gym</title>
+    <title>IronFit Gym | Build Your Strength</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-    <!-- Navigation -->
+    <!-- =========================
+         NAVBAR
+    ========================== -->
+
     <header>
         <nav class="navbar">
-            <h2 class="logo">IronFit</h2>
+
+            <a href="#home" class="logo">IronFit</a>
+
+            <!-- Mobile Menu Button -->
+            <button
+                class="menu-toggle"
+                type="button"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+            >
+                ☰
+            </button>
 
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
@@ -23,134 +38,322 @@
                 <li><a href="#trainers">Trainers</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
+
         </nav>
     </header>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <p>BUILD YOUR BODY. BUILD YOUR CONFIDENCE.</p>
-            <h1>Transform Your Body With IronFit</h1>
-            <p>
-                Train harder, stay stronger and become the best version of yourself.
+
+    <!-- =========================
+         HERO SECTION
+    ========================== -->
+
+    <main>
+
+        <section id="home" class="hero">
+
+            <div class="hero-content">
+
+                <p class="hero-label">
+                    BUILD YOUR BODY. BUILD YOUR CONFIDENCE.
+                </p>
+
+                <h1>
+                    Transform Your Body With IronFit
+                </h1>
+
+                <p class="hero-description">
+                    Train harder, stay stronger and become the best
+                    version of yourself.
+                </p>
+
+                <a href="#plans" class="btn">
+                    Join Now
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             ABOUT SECTION
+        ========================== -->
+
+        <section id="about" class="section">
+
+            <h2>About Us</h2>
+
+            <p class="section-description">
+                IronFit is a modern fitness center focused on strength,
+                fitness and a healthy lifestyle. Our goal is to help
+                every member achieve their fitness goals with the
+                right training, equipment and guidance.
             </p>
 
-            <a href="#plans" class="btn">Join Now</a>
-        </div>
-    </section>
+        </section>
 
-    <!-- About Section -->
-    <section id="about" class="section">
-        <h2>About Us</h2>
 
-        <p>
-            IronFit is a modern fitness center focused on strength,
-            fitness and healthy lifestyle. Our goal is to help every
-            member achieve their fitness goals.
-        </p>
-    </section>
+        <!-- =========================
+             SERVICES SECTION
+        ========================== -->
 
-    <!-- Services Section -->
-    <section id="services" class="section">
-        <h2>Our Services</h2>
+        <section id="services" class="section">
 
-        <div class="cards">
+            <h2>Our Services</h2>
 
-            <div class="card">
-                <h3>Weight Training</h3>
-                <p>Build strength and muscle with professional equipment.</p>
+            <div class="cards">
+
+                <article class="card">
+                    <div class="card-icon">🏋️</div>
+
+                    <h3>Weight Training</h3>
+
+                    <p>
+                        Build strength and muscle with professional
+                        equipment and structured workouts.
+                    </p>
+                </article>
+
+
+                <article class="card">
+                    <div class="card-icon">💪</div>
+
+                    <h3>Personal Training</h3>
+
+                    <p>
+                        Get personalized workout plans and guidance
+                        from experienced trainers.
+                    </p>
+                </article>
+
+
+                <article class="card">
+                    <div class="card-icon">🏃</div>
+
+                    <h3>Cardio Training</h3>
+
+                    <p>
+                        Improve endurance, stamina and overall
+                        cardiovascular fitness.
+                    </p>
+                </article>
+
             </div>
 
-            <div class="card">
-                <h3>Personal Training</h3>
-                <p>Get customized workouts from experienced trainers.</p>
+        </section>
+
+
+        <!-- =========================
+             MEMBERSHIP PLANS
+        ========================== -->
+
+        <section id="plans" class="section plans-section">
+
+            <h2>Membership Plans</h2>
+
+            <div class="cards">
+
+                <article class="card pricing-card">
+
+                    <h3>Basic</h3>
+
+                    <p class="price">
+                        ₹999
+                        <span>/ Month</span>
+                    </p>
+
+                    <ul class="features">
+                        <li>✓ Gym access</li>
+                        <li>✓ Cardio equipment</li>
+                        <li>✓ Locker access</li>
+                    </ul>
+
+                    <a href="#contact" class="btn">
+                        Choose Plan
+                    </a>
+
+                </article>
+
+
+                <article class="card pricing-card featured">
+
+                    <div class="popular-badge">
+                        Most Popular
+                    </div>
+
+                    <h3>Pro</h3>
+
+                    <p class="price">
+                        ₹1,499
+                        <span>/ Month</span>
+                    </p>
+
+                    <ul class="features">
+                        <li>✓ Gym access</li>
+                        <li>✓ Personal training</li>
+                        <li>✓ Cardio equipment</li>
+                        <li>✓ Locker access</li>
+                    </ul>
+
+                    <a href="#contact" class="btn">
+                        Choose Plan
+                    </a>
+
+                </article>
+
+
+                <article class="card pricing-card">
+
+                    <h3>Premium</h3>
+
+                    <p class="price">
+                        ₹1,999
+                        <span>/ Month</span>
+                    </p>
+
+                    <ul class="features">
+                        <li>✓ Unlimited gym access</li>
+                        <li>✓ Personal training</li>
+                        <li>✓ Custom workout plan</li>
+                        <li>✓ Nutrition guidance</li>
+                    </ul>
+
+                    <a href="#contact" class="btn">
+                        Choose Plan
+                    </a>
+
+                </article>
+
             </div>
 
-            <div class="card">
-                <h3>Cardio Training</h3>
-                <p>Improve endurance and overall cardiovascular health.</p>
+        </section>
+
+
+        <!-- =========================
+             TRAINERS SECTION
+        ========================== -->
+
+        <section id="trainers" class="section">
+
+            <h2>Our Trainers</h2>
+
+            <div class="cards">
+
+                <article class="card trainer-card">
+
+                    <div class="trainer-avatar">
+                        AK
+                    </div>
+
+                    <h3>Arun Kumar</h3>
+
+                    <p>
+                        Strength Coach
+                    </p>
+
+                </article>
+
+
+                <article class="card trainer-card">
+
+                    <div class="trainer-avatar">
+                        RR
+                    </div>
+
+                    <h3>Rahul Raj</h3>
+
+                    <p>
+                        Fitness Trainer
+                    </p>
+
+                </article>
+
+
+                <article class="card trainer-card">
+
+                    <div class="trainer-avatar">
+                        PS
+                    </div>
+
+                    <h3>Priya Sharma</h3>
+
+                    <p>
+                        Personal Trainer
+                    </p>
+
+                </article>
+
             </div>
 
-        </div>
-    </section>
+        </section>
 
-    <!-- Plans Section -->
-    <section id="plans" class="section">
-        <h2>Membership Plans</h2>
 
-        <div class="cards">
+        <!-- =========================
+             CONTACT SECTION
+        ========================== -->
 
-            <div class="card">
-                <h3>Basic</h3>
-                <h4>₹999 / Month</h4>
-                <p>Gym access</p>
-                <p>Cardio equipment</p>
+        <section id="contact" class="section contact-section">
+
+            <h2>Contact Us</h2>
+
+            <p class="section-description">
+                Ready to start your fitness journey?
+                Contact IronFit today.
+            </p>
+
+            <div class="contact-details">
+
+                <p>
+                    📍 Chennai, Tamil Nadu
+                </p>
+
+                <p>
+                    📞 +91 98765 43210
+                </p>
+
+                <p>
+                    ✉️ hello@ironfitgym.com
+                </p>
+
             </div>
 
-            <div class="card">
-                <h3>Pro</h3>
-                <h4>₹1,499 / Month</h4>
-                <p>Gym access</p>
-                <p>Personal training</p>
-            </div>
+            <a
+                href="tel:+919876543210"
+                class="btn"
+            >
+                Call Us
+            </a>
 
-            <div class="card">
-                <h3>Premium</h3>
-                <h4>₹1,999 / Month</h4>
-                <p>Unlimited access</p>
-                <p>Personal training</p>
-            </div>
+        </section>
 
-        </div>
-    </section>
+    </main>
 
-    <!-- Trainers Section -->
-    <section id="trainers" class="section">
-        <h2>Our Trainers</h2>
 
-        <div class="cards">
+    <!-- =========================
+         WHATSAPP BUTTON
+    ========================== -->
 
-            <div class="card">
-                <h3>Arun Kumar</h3>
-                <p>Strength Coach</p>
-            </div>
-
-            <div class="card">
-                <h3>Rahul Raj</h3>
-                <p>Fitness Trainer</p>
-            </div>
-
-            <div class="card">
-                <h3>Priya Sharma</h3>
-                <p>Personal Trainer</p>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="section">
-        <h2>Contact Us</h2>
-
-        <p>📍 Chennai, Tamil Nadu</p>
-        <p>📞 +91 98765 43210</p>
-        <p>✉️ hello@ironfitgym.com</p>
-
-        <a href="tel:+919876543210" class="btn">Call Us</a>
-    </section>
-
-    <!-- WhatsApp Button -->
     <a
-    href="https://wa.me/919876543210?text=Hi%20IronFit%20Gym%2C%20I%20want%20to%20know%20more%20about%20your%20membership."
-    class="whatsapp-btn"
-    target="_blank"
->
-    WhatsApp
-</a>
+        href="https://wa.me/919876543210?text=Hi%20IronFit%20Gym%2C%20I%20want%20to%20know%20more%20about%20your%20membership."
+        class="whatsapp-btn"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Chat with IronFit Gym on WhatsApp"
+    >
+        WhatsApp
+    </a>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
 
     <footer>
-        <p>© 2026 IronFit Gym. All rights reserved.</p>
+        <p>
+            © 2026 IronFit Gym. All rights reserved.
+        </p>
     </footer>
+
 
     <script src="script.js"></script>
 

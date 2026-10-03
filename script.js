@@ -1,42 +1,72 @@
 // =========================
-// NAVIGATION
+// MOBILE NAVIGATION
 // =========================
 
-const navLinks = document.querySelectorAll(".nav-links a");
+const menuToggle = document.querySelector(".menu-toggle");
+const navLinks = document.querySelector(".nav-links");
+const navItems = document.querySelectorAll(".nav-links a");
 
-navLinks.forEach((link) => {
-    link.addEventListener("click", (event) => {
-        const targetId = link.getAttribute("href");
+if (menuToggle && navLinks) {
 
-        if (targetId && targetId.startsWith("#")) {
-            event.preventDefault();
+    menuToggle.addEventListener("click", () => {
 
-            const targetSection = document.querySelector(targetId);
+        const isOpen = navLinks.classList.toggle("active");
 
-            if (targetSection) {
-                targetSection.scrollIntoView({
-                    behavior: "smooth"
-                });
-            }
-        }
+        menuToggle.setAttribute(
+            "aria-expanded",
+            isOpen.toString()
+        );
+
+        menuToggle.setAttribute(
+            "aria-label",
+            isOpen
+                ? "Close navigation menu"
+                : "Open navigation menu"
+        );
     });
-});
+
+
+    // Close menu after selecting a section
+
+    navItems.forEach((item) => {
+
+        item.addEventListener("click", () => {
+
+            navLinks.classList.remove("active");
+
+            menuToggle.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+
+            menuToggle.setAttribute(
+                "aria-label",
+                "Open navigation menu"
+            );
+        });
+
+    });
+}
 
 
 // =========================
-// BUTTON INTERACTION
+// JOIN / CONTACT BUTTONS
 // =========================
 
-const joinButtons = document.querySelectorAll(".btn");
+const buttons = document.querySelectorAll(".btn");
 
-joinButtons.forEach((button) => {
+buttons.forEach((button) => {
+
     button.addEventListener("click", () => {
-        const target = button.getAttribute("href");
 
-        if (target === "#") {
-            alert("Thanks for your interest in IronFit Gym!");
-        }
+        button.style.transform = "scale(0.97)";
+
+        setTimeout(() => {
+            button.style.transform = "";
+        }, 120);
+
     });
+
 });
 
 
@@ -47,6 +77,7 @@ joinButtons.forEach((button) => {
 const footerText = document.querySelector("footer p");
 
 if (footerText) {
+
     const currentYear = new Date().getFullYear();
 
     footerText.textContent =
